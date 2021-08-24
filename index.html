@@ -10,6 +10,17 @@
 
 <body>
 
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js').then((response) => {
+                console.warn('response: ', response)
+            }).catch((e) => {
+                console.error(e)
+            })
+        } else {
+            console.error('Service worker not running')
+        }
+    </script>
 </body>
 
 </html>
